@@ -4,8 +4,10 @@ database = './database.db'
 
 def execute_query(database, sql):
     with sqlite3.connect(database) as con:
+        con.execute("PRAGMA foreign_keys = ON")
         cur = con.cursor()
         cur.execute(sql)
+        con.commit() 
         return cur.fetchall()
 
 # Отримати всі завдання певного користувача. Використайте SELECT для отримання завдань конкретного користувача за його user_id.
@@ -56,7 +58,7 @@ if __name__ == '__main__':
     # Execute sql commands
     sql_cmd_first, sql_cmd_second, sql_cmd_third, sql_cmd_fourth,sql_cmd_fifth, sql_cmd_sixth, sql_cmd_seventh,sql_cmd_eightth,sql_cmd_ninth,sql_cmd_tenth,sql_cmd_eleventh,sql_cmd_twelfth,sql_cmd_thirteenth, sql_cmd_fourteenth
    
-    print(execute_query(database,sql_cmd_fourteenth))
+    print(execute_query(database,sql_cmd_eightth))
 
 
 
