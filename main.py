@@ -16,7 +16,7 @@ def create_connection(database):
         connection.close()
 
 # A function that creates a table
-def create_table(connection, sql_command, many=False):
+def create_table(connection, sql_command):
     """ Create a table from sql_command statement"""
     try:
         c = connection.cursor()
